@@ -1,0 +1,64 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+<xs:element name="FILE">
+<xs:complexType>
+<xs:choice maxOccurs="unbounded" minOccurs="0">
+<xs:element name="PROJ">...</xs:element>
+<xs:element name="INSTR">...</xs:element>
+<xs:element name="PKT" maxOccurs="unbounded" minOccurs="0">...</xs:element>
+<xs:element name="SPKT">
+<xs:complexType>...</xs:complexType>
+</xs:element>
+<xs:element name="APPLICATION">
+<xs:complexType>
+<xs:sequence>
+<xs:element type="xs:string" name="TIMESTAMP_T"/>
+<xs:element type="xs:string" name="NAME_S"/>
+<xs:element type="xs:string" name="INFO_S"/>
+<xs:element type="xs:string" name="APP_CMD_S"/>
+<xs:element name="TACHY_STATION">
+<xs:complexType>
+<xs:sequence>
+<xs:element type="xs:string" name="NAME_S"/>
+<xs:element type="xs:float" name="MORI_D"/>
+<xs:element type="xs:float" name="ORI_D"/>
+<xs:element type="xs:float" name="RE_D"/>
+<xs:element type="xs:float" name="HO_D"/>
+<xs:element type="xs:float" name="H_D"/>
+<xs:element name="TACHY_TARGET" maxOccurs="unbounded" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element type="xs:int" name="NAME_S"/>
+<xs:element name="TACHY_OBS_RIS">
+<xs:complexType>
+<xs:sequence>
+<xs:element type="xs:string" name="GUID_S"/>
+<xs:element type="xs:float" name="RE_A_D"/>
+<xs:element type="xs:float" name="HO_A_D"/>
+<xs:element type="xs:float" name="H_A_D"/>
+<xs:element type="xs:float" name="RE_E_D" minOccurs="0"/>
+<xs:element type="xs:float" name="HO_E_D" minOccurs="0"/>
+<xs:element type="xs:float" name="H_E_D" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute type="xs:byte" name="ID" use="optional"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute type="xs:byte" name="ID" use="optional"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute type="xs:byte" name="ID"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute type="xs:byte" name="ID"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="ZPKT">...</xs:element>
+<xs:element type="xs:string" name="FILENAME_S"/>
+<xs:element type="xs:string" name="FILEPATH_S"/>
+</xs:choice>
+<xs:attribute type="xs:byte" name="ID"/>
+</xs:complexType>
+</xs:element>
+</xs:schema>
